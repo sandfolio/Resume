@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjeev Kumar — CV 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* ── Surfaces ────────────────────────────────────────── */
+      --bg:   #efede4;
+      --bg2:  #e7e4d8;
+      --card: #f7f6f0;
+
+      /* ── Ink ─────────────────────────────────────────────── */
+      --ink:  #0e1e30;
+      --ink2: #42505f;
+      --mut:  #6b7785;
+      --rev:  #5a6e8c;
+      --revd: #465a78;
+
+      /* ── Accent ──────────────────────────────────────────── */
+      --accent: #b7613a;
+      --accl:   #e8a079;
+
+      /* ── Semantic ───────────────────────────────────────── */
+      --good: #6e8e63;
+      --fin:  #7e9670;
+      --find: #67805a;
+      --destructive: #c0392b;
+
+      /* ── Borders ────────────────────────────────────────── */
+      --line:  #0e1e3024;
+      --line2: #0e1e3012;
+
+      /* ── Data colors ─────────────────────────────────────── */
+      --data-blue:   #3080ff;
+      --data-cyan:   #3BD6FF;
+      --data-orange: #fe6e00;
+      --data-purple: #ac4bff;
+      --data-green:  #00c758;
+      --data-red:    #c0392b;
+
+      /* ── Typography ─────────────────────────────────────── */
+      --disp: "Archivo", sans-serif;
+      --mono: "IBM Plex Mono", monospace;
+
+      /* ── Type Scale (v1.2) ──────────────────────────────── */
+      --text-xs:  0.75rem;       /* 14px  — Label / Overline  */
+      --text-sm:  0.875rem;      /* 16px  — Small / Caption   */
+      --text-b4:  1rem;          /* 16px  — Body Base (fixed) */
+      --text-b2:  1.125rem;      /* 18px  — Body Medium       */
+      --text-b3:  clamp(16px, 1.9vw, 20px);  /* 16–20px — Body Base   */
+      --text-h3:  1.5rem;        /* 24px  — H3                */
+      --text-b1:  clamp(18px, 2.4vw, 24px);  /* 18–24px — Body Large  */
+      --text-h2:  1.875rem;      /* 28px  — H2                */
+      --text-h1:  clamp(24px, 3.4vw, 34px);  /* 24–34px — H1          */
+      --text-d2:  clamp(26px, 3.8vw, 40px);  /* 26–40px — Heading */
+      --text-d1:  clamp(36px, 5.6vw, 64px);  /* 36–64px — Display */
+      /* Mono */
+      --mono-sm:  0.875rem;      /* 14px  — Mono / Small      */
+      --mono-xs:  0.65625rem;    /* 12px  — Mono / XS         */
+
+      /* ── Font Weights ───────────────────────────────────── */
+      --weight-normal:   400;
+      --weight-medium:   500;
+      --weight-semibold: 600;
+      --weight-bold:     700;
+      --weight-black:    900;
+
+      /* ── Letter Spacing ─────────────────────────────────── */
+      --tracking-tight:   -0.025em;
+      --tracking-default: -0.015em;
+      --tracking-wide:    0.06em;
+      --tracking-widest:  0.14em;
+
+      /* ── Line Height ────────────────────────────────────── */
+      --leading-hero:    0.98;
+      --leading-tight:   1.1;
+      --leading-snug:    1.2;
+      --leading-normal:  1.5;
+      --leading-relaxed: 1.625;
+
+      /* ── Spacing ────────────────────────────────────────── */
+      --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+      --space-5: 20px; --space-6: 24px; --space-8: 32px;
+      --space-10: 40px; --space-12: 48px; --space-16: 64px;
+
+      /* ── Border Radius ──────────────────────────────────── */
+      --radius: 0;
+      --radius-xl: 0.75rem;
+      --radius-2xl: 1rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--disp);
+      font-size: var(--text-b4);
+      line-height: var(--leading-normal);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ───────────── NAV / TABS ───────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav__inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 var(--space-8);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-6);
+    }
+
+    .nav__brand {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--mut);
+      padding: var(--space-4) 0;
+      white-space: nowrap;
+    }
+
+    .nav__tabs {
+      display: flex;
+      gap: 0;
+    }
+
+    .tab-btn {
+      font-family: var(--disp);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      color: var(--mut);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: var(--space-4) var(--space-5);
+      cursor: pointer;
+      letter-spacing: -0.01em;
+      transition: color 0.15s;
+      position: relative;
+      top: 1px; /* sit on the nav border */
+    }
+
+    .tab-btn:hover { color: var(--ink2); }
+
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ───────────── LAYOUT ───────────── */
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: var(--space-12) var(--space-8) var(--space-16);
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: var(--space-8) var(--space-5) var(--space-12); }
+      .nav__inner { padding: 0 var(--space-5); }
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ───────────── SHARED HEADER ───────────── */
+    .header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+
+    .header__eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--mut);
+      margin-bottom: var(--space-3);
+    }
+
+    .header__name {
+      font-family: var(--disp);
+      font-size: var(--text-d1);
+      font-weight: var(--weight-black);
+      line-height: var(--leading-hero);
+      letter-spacing: var(--tracking-tight);
+      color: var(--ink);
+      margin-bottom: var(--space-5);
+    }
+
+    .header__name span { color: var(--accent); }
+
+    .header__tagline {
+      font-size: clamp(15px, 1.8vw, 18px);
+      line-height: 1.55;
+      color: var(--ink2);
+      max-width: 58ch;
+      margin-bottom: var(--space-6);
+    }
+
+    .header__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: center;
+    }
+
+    .header__link {
+      font-family: var(--disp);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accl);
+      padding-bottom: 1px;
+      letter-spacing: -0.01em;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .header__link:hover { color: var(--ink); border-color: var(--ink); }
+
+    .header__link-sep { color: var(--line); font-size: var(--text-sm); }
+
+    .header__current {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--bg2);
+      border: 1px solid var(--line);
+      padding: var(--space-2) var(--space-4);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--ink2);
+    }
+
+    .header__current-dot {
+      width: 6px; height: 6px;
+      background: var(--good);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ───────────── SECTION LABEL ───────────── */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--mut);
+      margin-bottom: var(--space-5);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .section-label::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: var(--line2);
+    }
+
+    /* ───────────── RESUME BODY GRID ───────────── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: var(--space-12);
+    }
+    @media (max-width: 700px) {
+      .body-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+    }
+
+    /* ───────────── EXPERIENCE ───────────── */
+    .exp-item {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--line2);
+    }
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-4);
+      margin-bottom: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .exp-company {
+      font-family: var(--disp);
+      font-size: var(--text-b2);
+      font-weight: var(--weight-bold);
+      color: var(--ink);
+      letter-spacing: var(--tracking-default);
+      line-height: 1.2;
+    }
+
+    .exp-meta { text-align: right; flex-shrink: 0; }
+    .exp-location {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: var(--tracking-wide);
+      color: var(--mut);
+      display: block;
+    }
+    .exp-period {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ink2);
+      letter-spacing: 0.04em;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .exp-role {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-3);
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-3);
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      padding: 2px 8px;
+    }
+    .tag--blue   { background: rgba(48,128,255,0.1);  color: var(--data-blue);   border: 1px solid rgba(48,128,255,0.3);  }
+    .tag--orange { background: rgba(254,110,0,0.1);   color: var(--data-orange); border: 1px solid rgba(254,110,0,0.3);   }
+    .tag--purple { background: rgba(172,75,255,0.1);  color: var(--data-purple); border: 1px solid rgba(172,75,255,0.3);  }
+    .tag--green  { background: rgba(0,199,88,0.1);    color: var(--data-green);  border: 1px solid rgba(0,199,88,0.3);    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .exp-bullets li {
+      font-size: var(--text-sm);
+      color: var(--ink2);
+      line-height: 1.5;
+      padding-left: var(--space-4);
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--line);
+      font-size: 12px;
+    }
+
+    /* ───────────── SIDEBAR ───────────── */
+    .sidebar { display: flex; flex-direction: column; gap: var(--space-8); }
+
+    .sidebar-section + .sidebar-section {
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--line2);
+    }
+
+    .contact-list { display: flex; flex-direction: column; gap: var(--space-3); }
+
+    .contact-item { display: flex; flex-direction: column; gap: 2px; }
+
+    .contact-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--mut);
+    }
+    .contact-value {
+      font-size: var(--text-sm);
+      color: var(--ink2);
+      font-weight: var(--weight-medium);
+    }
+    .contact-value a { color: var(--accent); text-decoration: none; }
+    .contact-value a:hover { text-decoration: underline; }
+
+    .edu-list { display: flex; flex-direction: column; gap: var(--space-5); }
+    .edu-degree { font-size: var(--text-sm); font-weight: var(--weight-bold); color: var(--ink); letter-spacing: -0.01em; margin-bottom: 2px; }
+    .edu-field  { font-size: var(--text-sm); color: var(--ink2); margin-bottom: 2px; }
+    .edu-school { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--mut); }
+
+    /* ───────────── COVER LETTER ───────────── */
+    .cl-wrapper {
+      max-width: 680px;
+    }
+
+    .cl-greeting {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: var(--weight-bold);
+      color: var(--ink);
+      letter-spacing: var(--tracking-default);
+      line-height: 1.2;
+      margin-bottom: var(--space-8);
+    }
+
+    .cl-body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    .cl-body p {
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.7;
+      color: var(--ink2);
+    }
+
+    .cl-body strong {
+      color: var(--ink);
+      font-weight: var(--weight-semibold);
+    }
+
+    .cl-body a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accl);
+    }
+    .cl-body a:hover { border-color: var(--accent); }
+
+    .cl-divider {
+      border: none;
+      border-top: 1px solid var(--line2);
+      margin: var(--space-8) 0;
+    }
+
+    .cl-sign {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .cl-sign__regards {
+      font-size: var(--text-sm);
+      color: var(--ink2);
+      font-weight: var(--weight-medium);
+    }
+
+    .cl-sign__name {
+      font-size: var(--text-b2);
+      font-weight: var(--weight-bold);
+      color: var(--ink);
+      letter-spacing: var(--tracking-default);
+      margin-top: var(--space-2);
+    }
+
+    .cl-sign__title {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      color: var(--mut);
+    }
+
+    .cl-sign__link {
+      font-size: var(--text-sm);
+      color: var(--mut);
+      font-style: italic;
+      margin-top: var(--space-2);
+    }
+    .cl-sign__link a { color: var(--accent); text-decoration: none; }
+    .cl-sign__link a:hover { text-decoration: underline; }
+
+    /* ── Stat callouts in cover letter ── */
+    .cl-stat {
+      display: inline;
+      font-weight: var(--weight-bold);
+      color: var(--ink);
+    }
+
+    /* ───────────── FOOTER QUOTE ───────────── */
+    .footer-quote {
+      margin-top: var(--space-12);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--line2);
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+    .footer-quote__text { font-size: var(--text-sm); color: var(--mut); font-style: italic; line-height: 1.5; }
+    .footer-quote__attr { font-family: var(--mono); font-size: 10.5px; font-weight: 500; color: var(--line); letter-spacing: 0.04em; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<!-- ── Sticky tab nav ── -->
+<nav class="nav">
+  <div class="nav__inner">
+    <span class="nav__brand">Sanjeev Kumar</span>
+    <div class="nav__tabs">
+      <button class="tab-btn active" onclick="switchTab('resume', this)">Resume</button>
+      <button class="tab-btn" onclick="switchTab('cover', this)">Cover letter</button>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════
+       TAB 1 — RESUME
+  ══════════════════════════════════════ -->
+  <div id="tab-resume" class="tab-panel active">
+
+    <header class="header">
+      <p class="header__eyebrow">Designer · 12+ years</p>
+      <h1 class="header__name">Sanjeev<br><span>Kumar</span></h1>
+      <p class="header__tagline">
+        Designer with 12+ years of experience including 7+ years of design leadership
+        in mobile &amp; web products, startups, product strategy &amp; business.
+      </p>
+      <div class="header__links">
+        <span class="header__current"><span class="header__current-dot"></span>AVP, Head of Design — HT Digital</span>
+        <a href="https://www.linkedin.com/in/sanjeevkumardesign" class="header__link">LinkedIn ↗</a>
+        <span class="header__link-sep">·</span>
+        <a href="https://www.sandfolio.com" class="header__link">sandfolio.com ↗</a>
+        <span class="header__link-sep">·</span>
+        <button class="header__link" style="background:none;border:none;border-bottom:1px solid var(--accl);padding-bottom:1px;cursor:pointer;" onclick="switchTabByName('cover')">Cover letter ↗</button>
+      </div>
+    </header>
+
+    <div class="body-grid">
+
+      <!-- Main: Experience -->
+      <main>
+        <p class="section-label">Experience</p>
+
+        <div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-company">HT Digital</div>
+              <div class="exp-meta">
+                <span class="exp-location">Gurugram</span>
+                <span class="exp-period">2025 — ongoing</span>
+              </div>
+            </div>
+            <div class="exp-role">AVP · Head of Design</div>
+            <div class="exp-tags">
+              <span class="tag tag--blue">Fintech</span>
+              <span class="tag tag--orange">News</span>
+              <span class="tag tag--purple">Print</span>
+              <span class="tag tag--green">Credit</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Managing three verticals — News, Fintech &amp; Affiliate</li>
+              <li>Three products — Hindustan Times (HT), Live Mint &amp; Mint Money</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-company">BharatPe</div>
+              <div class="exp-meta">
+                <span class="exp-location">Gurugram</span>
+                <span class="exp-period">2023 — 2025 · 2 yrs</span>
+              </div>
+            </div>
+            <div class="exp-role">Director · Head of Design</div>
+            <div class="exp-tags">
+              <span class="tag tag--blue">Fintech</span>
+              <span class="tag tag--green">Credit</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Managing merchant &amp; consumer products</li>
+              <li>Three products — BharatPe UPI, BharatPe for Business, Invest BharatPe</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-company">apna.co</div>
+              <div class="exp-meta">
+                <span class="exp-location">Remote</span>
+                <span class="exp-period">2021 — 2023 · 2 yrs</span>
+              </div>
+            </div>
+            <div class="exp-role">Senior Director of Design</div>
+            <div class="exp-tags">
+              <span class="tag tag--orange">Jobs</span>
+              <span class="tag tag--green">Growth</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Founding member; built &amp; managed design team of 9 designers</li>
+              <li>4 business charters — Candidate, Employer, Monetisation &amp; New Initiatives / Growth</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-company">MakeMyTrip</div>
+              <div class="exp-meta">
+                <span class="exp-location">Gurugram</span>
+                <span class="exp-period">2020 — 2021 · 1 yr</span>
+              </div>
+            </div>
+            <div class="exp-role">Design Manager</div>
+            <div class="exp-tags">
+              <span class="tag tag--blue">Travel</span>
+              <span class="tag tag--orange">Growth</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Led Growth, Holidays &amp; Design Systems teams</li>
+              <li>Drove platform expansion to the Middle East with multilingual Arabic experiences</li>
+              <li>Spearheaded the "Khojo Bharat" campaign under Incredible India post-pandemic</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-company">Saal.ai &amp; Swoo.tv</div>
+              <div class="exp-meta">
+                <span class="exp-location">Abu Dhabi, UAE</span>
+                <span class="exp-period">2016 — 2020 · 4 yrs</span>
+              </div>
+            </div>
+            <div class="exp-role">Design Manager · Algorythma / ADFG</div>
+            <div class="exp-tags">
+              <span class="tag tag--orange">Media</span>
+              <span class="tag tag--purple">AI</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Founding design team member; built a diverse team of 7 members</li>
+              <li>Launched Swoo, a live-streaming platform, and built team of 5 from 0–1</li>
+              <li>Contributed to Saal.ai &amp; an academic portal for the Abu Dhabi Air Force</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <div class="exp-company">InMobi</div>
+              <div class="exp-meta">
+                <span class="exp-location">Bengaluru</span>
+                <span class="exp-period">2015 — 2016 · 1 yr</span>
+              </div>
+            </div>
+            <div class="exp-role">Lead Product Designer</div>
+            <div class="exp-tags">
+              <span class="tag tag--blue">Ad-tech</span>
+              <span class="tag tag--green">Mobile</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Part of New Initiatives team / Device Solutions, working with Samsung &amp; LG</li>
+              <li>Founding team member of Glance.ai — now a unicorn</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-quote">
+          <span class="footer-quote__text">"A problem well stated is a problem half solved."</span>
+          <span class="footer-quote__attr">— Charles Kettering</span>
+        </div>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+
+        <div class="sidebar-section">
+          <p class="section-label">Contact</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <span class="contact-value"><a href="mailto:sanjeev@sandfolio.com">sanjeev@sandfolio.com</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">+91 97316 36518</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Website</span>
+              <span class="contact-value"><a href="https://www.sandfolio.com">sandfolio.com</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <p class="section-label">Education</p>
+          <div class="edu-list">
+            <div class="edu-item">
+              <div class="edu-degree">M.Des</div>
+              <div class="edu-field">UX / Product Design</div>
+              <div class="edu-school">IIT KANPUR · 2015</div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-degree">B.Des</div>
+              <div class="edu-field">Product Design</div>
+              <div class="edu-school">NIFT DELHI · 2012</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <p class="section-label">Focus areas</p>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-value">Mobile &amp; web products</span></div>
+            <div class="contact-item"><span class="contact-value">Design leadership</span></div>
+            <div class="contact-item"><span class="contact-value">Product strategy</span></div>
+            <div class="contact-item"><span class="contact-value">0–1 team building</span></div>
+            <div class="contact-item"><span class="contact-value">Fintech &amp; consumer apps</span></div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       TAB 2 — COVER LETTER
+  ══════════════════════════════════════ -->
+  <div id="tab-cover" class="tab-panel">
+
+    <header class="header">
+      <p class="header__eyebrow">Cover letter · 2026</p>
+      <h1 class="header__name">Sanjeev<br><span>Kumar</span></h1>
+      <p class="header__tagline">
+        AVP — Head of Design · HT Digital
+      </p>
+      <div class="header__links">
+        <span class="header__current"><span class="header__current-dot"></span>Available for the right opportunity</span>
+        <a href="https://www.sandfolio.com" class="header__link">sandfolio.com ↗</a>
+        <span class="header__link-sep">·</span>
+        <button class="header__link" style="background:none;border:none;border-bottom:1px solid var(--accl);padding-bottom:1px;cursor:pointer;" onclick="switchTabByName('resume')">View resume ↗</button>
+      </div>
+    </header>
+
+    <div class="cl-wrapper">
+      <p class="section-label">Letter</p>
+
+      <h2 class="cl-greeting">Hi</h2>
+
+      <div class="cl-body">
+
+        <p>
+          As a hands-on design leader, I currently serve as <strong>AVP – Design at HT Digital</strong>,
+          leading multidisciplinary teams to craft user-centric, scalable digital experiences
+          that align with both customer needs and business goals.
+        </p>
+
+        <p>
+          With over <strong>12+ years of experience</strong> designing and scaling digital products across
+          <strong>Fintech, Travel, Edtech, Live-streaming, Live Games &amp; Fantasy,
+          Native Advertising</strong> and more — I bring a strong foundation in user-centered
+          thinking, product strategy, and organisational design.
+        </p>
+
+        <p>
+          At <strong>HT Digital</strong> I lead design across multiple verticals —
+          <strong>News, Fintech &amp; Affiliate</strong> — spanning products like Hindustan Times (HT),
+          Live Mint, and Mint Money. I drive end-to-end product design across consumer and
+          fintech ecosystems, aligning design strategy with business goals across print,
+          digital, and credit verticals.
+        </p>
+
+        <p>
+          Prior to HT Digital, I served as <strong>Head of Design at BharatPe</strong>, a leading
+          fintech platform in India. I led end-to-end design across both the merchant and
+          consumer ecosystems — QR payments, UPI-based solutions, lending, and smart POS.
+          Our platforms served over <strong>5 million DAUs</strong> and enabled
+          <strong>₹600 crore (~$72M) in monthly loan disbursals</strong>. On the consumer side,
+          I helped shape a comprehensive financial suite including UPI payments, co-branded
+          credit cards, personal loans, and a growing wealth-tech vertical serving India's
+          Tier 2 cities through Mutual Funds, Fixed Deposits, and Insurance.
+        </p>
+
+        <p>
+          Before BharatPe, I was a <strong>founding design member at apna.co</strong>, where I
+          scaled the design team from scratch and helped build a job platform for India's
+          blue &amp; gray-collar workforce. I collaborated closely with product and business
+          leadership to define strategy, build cross-functional alignment, and execute
+          against quarterly OKRs.
+        </p>
+
+        <p>
+          Prior to that, I worked as <strong>Design Manager at MakeMyTrip</strong>, leading
+          Growth, Holidays, and Design Systems. I drove the platform's expansion to the
+          Middle East, launched multilingual Arabic experiences, and spearheaded the
+          <strong>"Khojo Bharat" campaign</strong> under <em>Incredible India</em> to promote
+          domestic travel post-pandemic.
+        </p>
+
+        <p>
+          Earlier, I spent four years in Abu Dhabi as a <strong>Founding Design Member at
+          Algorythma</strong>, a tech initiative by ADFG. I helped launch <strong>Swoo</strong>,
+          a live-streaming platform, and contributed to government-backed initiatives
+          including <a href="http://Saal.ai">Saal.ai</a> and an academic portal for the
+          <strong>Abu Dhabi Air Force</strong> — while building in-house product and design teams.
+        </p>
+
+        <p>
+          My journey began at <strong>InMobi</strong>, working on native advertising with
+          OEMs like Samsung and LG. I was part of the founding team that built
+          <a href="http://Glance.ai">Glance.ai</a> — now a unicorn and a cornerstone of
+          lock screen content innovation.
+        </p>
+
+        <p>
+          I hold a <strong>Master's degree (M.Des) in UX Design from IIT Kanpur</strong> and a
+          <strong>Bachelor's degree (B.Des) from NIFT Delhi</strong> — both premier institutions
+          grounded in design thinking and research-led problem solving.
+        </p>
+
+        <p>
+          Now, as AVP – Design at HT Digital, I continue to seek challenges that allow me
+          to tackle complex user problems at scale, mentor teams, and create impactful
+          solutions that blend product thinking with empathy and craft.
+        </p>
+
+      </div>
+
+      <hr class="cl-divider">
+
+      <div class="cl-sign">
+        <span class="cl-sign__regards">Best regards,</span>
+        <span class="cl-sign__name">Sanjeev Kumar</span>
+        <span class="cl-sign__title">AVP – DESIGN · HT DIGITAL</span>
+        <span class="cl-sign__link">For works — <a href="https://www.sandfolio.com">www.sandfolio.com</a></span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div><!-- /page -->
+
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function switchTabByName(id) {
+    const idx = id === 'resume' ? 0 : 1;
+    const btn = document.querySelectorAll('.tab-btn')[idx];
+    switchTab(id, btn);
+  }
+</script>
+
+</body>
+</html>
