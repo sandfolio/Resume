@@ -239,9 +239,9 @@ module.exports = {
 | --text-h1     | H1                   | Archivo        | clamp(1.5–2.125rem)| 24–34px   | 700    | 1.1         | −0.015em       | Feature / card headings      |
 | --text-h2     | H2                   | Archivo        | 1.875rem           | 28px      | 700    | 1.2         | −0.015em       | H2 heading                   |
 | --text-h3     | H3                   | Archivo        | 1.5rem             | 24px      | 600    | 1.33        | −0.010em       | H3 heading                   |
-| --text-b1     | Body Large           | Archivo        | clamp(1.125–1.5rem)| 18–24px   | 400    | 1.45        | 0              | Large body / lead paragraph  |
+| --text-b1     | Body Large           | Archivo        | 1.125rem           | 18        | 400    | 1.45        | 0              | Large body / lead paragraph  |
 | --text-b2     | Body Medium          | Archivo        | 1.125rem           | 18px      | 400    | 1.556       | 0              | Large body fixed             |
-| --text-b3     | Body Base            | Archivo        | clamp(1–1.25rem)   | 16–20px   | 400    | 1.5         | 0              | Standard body fluid          |
+| --text-b3     | Body Base            | Switzer        | 1rem               | 16px      | 400    | 1.5         | 0              |Standard body fluid  
 | --text-b4     | Body Base (fixed)    | Archivo        | 1rem               | 16px      | 400    | 1.5         | 0              | Standard body fixed          |
 | --text-sm     | Small / Caption      | Archivo        | 0.875rem           | 16px      | 400    | 1.43        | 0              | Captions / metadata          |
 | --text-xs     | Label / Overline     | Archivo        | 0.75rem            | 14px      | 600    | 1.33        | +0.060em       | Uppercase labels / overlines |
