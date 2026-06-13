@@ -72,19 +72,6 @@ Paste this `:root` block into your stylesheet. Every other rule references these
   --disp: "Archivo", sans-serif;
   --mono: "IBM Plex Mono", monospace;
 
-  /* ── Type Scale (v1.2) ─────────────────────────────── */
-  --text-xs:  0.75rem;       /* 14px  — Label / Overline      */
-  --text-sm:  0.875rem;      /* 16px  — Small / Caption       */
-  --text-b4:  1rem;          /* 16px  — Body Base (fixed)     */
-  --text-b2:  1.125rem;      /* 18px  — Body Medium           */
-  --text-b3:  clamp(16px, 1.9vw, 20px);  /* 16–20px — Body Base       */
-  --text-h3:  1.5rem;        /* 24px  — H3                    */
-  --text-b1:  clamp(18px, 2.4vw, 24px);  /* 18–24px — Body Large      */
-  --text-h2:  1.875rem;      /* 28px  — H2                    */
-  --text-h1:  clamp(24px, 3.4vw, 34px);  /* 24–34px — H1              */
-  --text-d2:  clamp(26px, 3.8vw, 40px);  /* 26–40px — Heading             */
-  --text-d1:  clamp(36px, 5.6vw, 64px);  /* 36–64px — Display             */
-
   /* Mono sizes */
   --mono-sm: 0.875rem;    /* 14px  — Label / Mono / Small   */
   --mono-xs: 0.65625rem;  /* 12px  — Label / Mono / XS      */
