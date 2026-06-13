@@ -1,32 +1,18 @@
 ---
-name: saarthios-design-tokens
-description: >
-  Apply the SaarthiOS brand design system — colors, typography, spacing, and
-  component patterns — to any HTML page or Figma design. Use this skill whenever
-  the user asks to build, style, or redesign anything for SaarthiOS: landing pages,
-  dashboards, UI components, feature mocks, Figma frames, email templates, or any
-  branded surface. Also trigger when the user says "use SaarthiOS colors/fonts",
-  "match the saarthios.com style", or "follow the SaarthiOS brand". This skill
-  gives you the exact tokens extracted from the live site — use them verbatim
-  rather than inventing values.
----
-
-# SaarthiOS Design Tokens
-
-Tokens extracted directly from saarthios.com. Apply them exactly as shown — the
-brand's visual identity depends on these specific values. When in doubt, default to
-the token, not your intuition.
+name: sanjika-os
+description: Apply design system — colors, typography, spacing, Buttons and component patterns — to any HTML page or Figma design. 
 
 ---
 
 ## Core Brand Rules (non-negotiable)
 
 1. **Canvas is warm off-white** (`#efede4`) — never pure white or grey.
-2. **One typeface: Archivo** for all display, heading, and body text. **IBM Plex Mono** for code, data labels, and technical strings only.
-3. **One primary CTA color: terracotta** (`#b7613a`). No other color should compete with it as a call-to-action.
-4. **Sharp corners by default** (`border-radius: 0`). Use `0.75rem` / `1rem` only on modals, cards, and popovers.
-5. **Sentence case for all headings** — no Title Case, no ALL CAPS except short ≤3-word overlines/labels.
-6. **Borders are ink at low opacity**, not grey hex values. Use `--line` or `--line2`.
+2. **One typeface: Archivo** for all display, heading, and body text.
+3. **IBM Plex Mono** for code, data labels, and technical strings only.
+4. **One primary CTA color: terracotta** (`#b7613a`). No other color should compete with it as a call-to-action.
+5. **Sharp corners by default** (`border-radius: 0`). Use `0.75rem` / `1rem` only on modals, cards, and popovers.
+6. **Sentence case for all headings** — no Title Case, no ALL CAPS except short ≤3-word overlines/labels.
+7. **Borders are ink at low opacity**, not grey hex values. Use `--line` or `--line2`.
 
 ---
 
@@ -142,66 +128,6 @@ Paste this `:root` block into your stylesheet. Every other rule references these
 
 ---
 
-## Tailwind Preset
-
-Drop this into `tailwind.config.js` as `presets: [require('./saarthios.preset.js')]`, or merge manually:
-
-```js
-// saarthios.preset.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        bg:         'var(--bg)',
-        bg2:        'var(--bg2)',
-        card:       'var(--card)',
-        ink:        'var(--ink)',
-        ink2:       'var(--ink2)',
-        mut:        'var(--mut)',
-        accent:     'var(--accent)',
-        'accent-light': 'var(--accl)',
-        good:       'var(--good)',
-        fin:        'var(--fin)',
-        destructive:'var(--destructive)',
-        line:       'var(--line)',
-        'data-blue':   'var(--data-blue)',
-        'data-cyan':   'var(--data-cyan)',
-        'data-orange': 'var(--data-orange)',
-        'data-purple': 'var(--data-purple)',
-        'data-green':  'var(--data-green)',
-      },
-      fontFamily: {
-        sans: ['Archivo', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'monospace'],
-      },
-      fontSize: {
-        'd1':  ['clamp(36px,5.6vw,64px)',  { lineHeight: '0.98',  letterSpacing: '-0.025em' }],
-        'd2':  ['clamp(26px,3.8vw,40px)',  { lineHeight: '1.05',  letterSpacing: '-0.02em'  }],
-        'h1':  ['clamp(24px,3.4vw,34px)',  { lineHeight: '1.1',   letterSpacing: '-0.015em' }],
-        'h2':  ['1.875rem',  { lineHeight: '1.2',   letterSpacing: '-0.015em' }],
-        'h3':  ['1.5rem',    { lineHeight: '1.33',  letterSpacing: '-0.01em'  }],
-        'b1':  ['clamp(18px,2.4vw,24px)',  { lineHeight: '1.45'  }],
-        'b2':  ['1.125rem',  { lineHeight: '1.556' }],
-        'b3':  ['clamp(16px,1.9vw,20px)',  { lineHeight: '1.5'   }],
-        'b4':  ['1rem',      { lineHeight: '1.5'   }],
-        'sm':  ['0.875rem',  { lineHeight: '1.43'  }],
-        'xs':  ['0.75rem',   { lineHeight: '1.33'  }],
-      },
-      borderRadius: {
-        DEFAULT: '0',
-        xl:  '0.75rem',
-        '2xl': '1rem',
-      },
-      borderColor: {
-        DEFAULT: 'var(--line)',
-      },
-    },
-  },
-}
-```
-
----
-
 ## Figma Token Reference
 
 ### Color Tokens
@@ -230,7 +156,7 @@ module.exports = {
 | data-purple      | `#ac4bff`  | 100%    | Chart series / premium badge        |
 | data-green       | `#00c758`  | 100%    | Chart series / growth badge         |
 
-### Typography Tokens (Figma Text Styles · v1.2)
+### Typography Tokens 
 
 | Token         | Style Name           | Font Family    | Size (rem)         | Size (px) | Weight | Line Height | Letter Spacing | Usage                        |
 |---------------|----------------------|----------------|--------------------|-----------|--------|-------------|----------------|------------------------------|
